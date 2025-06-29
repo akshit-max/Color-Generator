@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random color generator</title>
+    <style>
+        .container {
+            width: 50%;
+            height: 85vh;
+            border: 2px solid black;
+            box-shadow: 10px 20px 30px grey;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        .insidebox {
+            width: 90%;
+            height: 40vh;
+            border: 2px solid black;
+            box-shadow: 10px 20px 30px grey;
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            /* background-color: aqua; */
+
+        }
+
+        .hex {
+
+            width: 50%;
+            height: 10vh;
+            border: 2px solid black;
+            box-shadow: 10px 20px 30px grey;
+            margin: auto;
+            margin-top: 100px;
+            border-radius: 10px;
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .btn{
+            width: 20%;
+            height: 10vh;
+            border: 2px solid black;
+            box-shadow: 10px 20px 30px grey;
+            margin: auto;
+            margin-top: 90px;
+            border-radius: 15px;
+            background-color: #28a745;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: x-large;
+            font-weight: bolder;
+            /* transition: all 1s ease-in-out 1s; */
+            
+
+        }
+        .btn:hover{
+            background-color: #218838;
+            padding: 40px 40px;
+        }
+        .hex{
+            font-size: xx-large;
+            font-weight: bold;
+        }
+        
+    </style>
+    <script>
+        function random(){
+            // alert("cc")
+        const numbers="0123456789"
+        const characters="ABCDEF"
+        const length=6
+        let output="";
+        output+=numbers
+        output+=characters
+
+        let final="";
+        for(let i=0;i<length;i++){
+            let randomm=Math.floor(random=Math.random()*output.length)
+        final+=output[randomm];
+        }
+        // let ans=parseInt(final);
+        document.getElementById("inside").style.backgroundColor= '#'+ final;
+        document.getElementById("hex").innerHTML='#'+ final;
+    }
+        document.addEventListener("DOMContentLoaded",function(){
+            document.getElementById("gen").addEventListener("click",random);
+            
+          })
+
+
+
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="inside" class="insidebox">
+
+        </div>
+        <div id="hex" class="hex">
+            
+        </div>
+        <div class="last">
+        <button id="gen" class="btn">GENERATE</button>
+    </div>
+    </div>
+</body>
+
+</html>
